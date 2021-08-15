@@ -5,12 +5,12 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.enigma.model.Rotor;
+import com.example.enigma.model.Reflector;
 
 @Repository
-public interface RotorRepository extends JpaRepository<Rotor, Long>{
+public interface ReflectorRepository extends JpaRepository<Reflector, Long>{
 	
-	Optional<Rotor> findById(Long id);
-	Optional<Rotor> findByRotorName(String rotorName);
+	Optional<Reflector> findById(Long id);
+	Optional<Reflector> findByRotorName(String rotorName);
 	Boolean existsByRotorOrder(String rotorOrder);
 }

@@ -17,6 +17,12 @@ public class RotorServiceImpl implements RotorService{
 		java.util.Optional<Rotor> opt = rotorRepository.findById(id);
 		return opt.isPresent() ? rotorRepository.findById(id).get() : null;
 	}
+	
+	@Override
+	public Rotor findByRotorName(String rotorName) {
+		java.util.Optional<Rotor> opt = rotorRepository.findByRotorName(rotorName);
+		return opt.isPresent() ? rotorRepository.findByRotorName(rotorName).get() : null;
+	}
 
 	@Override
 	public String getRotorOrder(Rotor rotor) {

@@ -3,7 +3,9 @@ package com.example.enigma.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.example.enigma.model.Reflector;
 import com.example.enigma.model.Rotor;
+import com.example.enigma.service.ReflectorService;
 import com.example.enigma.service.RotorService;
 
 @Component
@@ -11,6 +13,9 @@ public class StartupControls {
 
 	@Autowired
 	private RotorService rotorService;
+	
+	@Autowired
+	private ReflectorService reflectorService;
 
 	String magicRotorOrder = "DATABASEFILLEDALREADY";
 
@@ -72,6 +77,34 @@ public class StartupControls {
     		rotorService.save(rotorVI);
     		rotorService.save(rotorVII);
     		rotorService.save(rotorVIII);
+    		
+    		Reflector reflectorA = new Reflector();
+    		reflectorA.setRotorName("Reflector A");
+    		reflectorA.setRotorOrder("EJMZALYXVBWFCRQUONTSPIKHGD");
+
+    		Reflector reflectorB = new Reflector();
+    		reflectorB.setRotorName("Reflector B");
+    		reflectorB.setRotorOrder("YRUHQSLDPXNGOKMIEBFZCWVJAT");
+
+    		Reflector reflectorC = new Reflector();
+    		reflectorC.setRotorName("Reflector C");
+    		reflectorC.setRotorOrder("FVPJIAOYEDRZXWGCTKUQSBNMHL");
+
+    		Reflector reflectorBThin = new Reflector();
+    		reflectorBThin.setRotorName("Reflector B Thin");
+    		reflectorBThin.setRotorOrder("ENKQAUYWJICOPBLMDXZVFTHRGS");
+    		reflectorBThin.setModelName("M4 R1 (M3 + Thin)");
+
+    		Reflector reflectorCThin = new Reflector();
+    		reflectorCThin.setRotorName("Reflector C Thin");
+    		reflectorCThin.setRotorOrder("RDOBJNTKVEHMLFCWZAXGYIPSUQ");
+    		reflectorCThin.setModelName("M4 R1 (M3 + Thin)");
+    		
+    		reflectorService.save(reflectorA);
+    		reflectorService.save(reflectorB);
+    		reflectorService.save(reflectorC);
+    		reflectorService.save(reflectorBThin);
+    		reflectorService.save(reflectorCThin);
 
 			System.out.println("Rotors are filled ");
 		}

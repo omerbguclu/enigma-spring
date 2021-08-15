@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Rotor {
+public class Reflector {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
