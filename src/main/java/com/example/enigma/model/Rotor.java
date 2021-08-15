@@ -1,16 +1,50 @@
 package com.example.enigma.model;
 
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Rotor {
 
-	List<String> rotor;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String rotorName;
+	private String modelName;
+	String rotorOrder;
 
-	public List<String> getRotor() {
-		return rotor;
+	public Long getId() {
+		return id;
 	}
 
-	public void setRotor(List<String> rotor) {
-		this.rotor = rotor;
+	public void setId(Long id) {
+		this.id = id;
 	}
+
+	public String getRotorName() {
+		return rotorName;
+	}
+
+	public void setRotorName(String rotorName) {
+		this.rotorName = rotorName;
+	}
+
+	public String getModelName() {
+		return modelName;
+	}
+
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
+	}
+
+	public String getRotorOrder() {
+		return rotorOrder;
+	}
+
+	public void setRotorOrder(String rotor) {
+		this.rotorOrder = rotor;
+	}
+
 }
