@@ -1,7 +1,5 @@
 package com.example.enigma.service;
 
-import java.util.Objects;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +14,8 @@ public class RotorServiceImpl implements RotorService{
 	
 	@Override
 	public Rotor findById(Long id) {
-		Object obj = rotorRepository.findById(id);
-		return Objects.isNull(obj) ? null : rotorRepository.findById(id).get();
+		java.util.Optional<Rotor> opt = rotorRepository.findById(id);
+		return opt.isPresent() ? rotorRepository.findById(id).get() : null;
 	}
 
 	@Override
@@ -25,4 +23,13 @@ public class RotorServiceImpl implements RotorService{
 		return rotor.getRotorOrder();
 	}
 
+	@Override
+	public void save(Rotor rotor) {
+		rotorRepository.save(rotor);
+	}
+
+	@Override
+	public Boolean existsByRotorOrder(String rotorOrder) {
+		return rotorRepository.existsByRotorOrder(rotorOrder);
+	}
 }

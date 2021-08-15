@@ -11,4 +11,5 @@ import com.example.enigma.model.Rotor;
 public interface RotorRepository extends JpaRepository<Rotor, Long>{
 	
 	Optional<Rotor> findById(Long id);
+	Boolean existsByRotorOrder(String rotorOrder);
 }

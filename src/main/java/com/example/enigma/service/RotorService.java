@@ -6,4 +6,6 @@ public interface RotorService {
 	
 	Rotor findById(Long id);
 	String getRotorOrder(Rotor rotor);
+	void save(Rotor rotor);
+	Boolean existsByRotorOrder(String rotorOrder);
 }

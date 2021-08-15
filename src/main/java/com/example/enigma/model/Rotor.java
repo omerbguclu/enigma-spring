@@ -43,8 +43,8 @@ public class Rotor {
 		return rotorOrder;
 	}
 
-	public void setRotorOrder(String rotor) {
-		this.rotorOrder = rotor;
+	public void setRotorOrder(String rotorOrder) {
+		this.rotorOrder = rotorOrder;
 	}
 
 }
