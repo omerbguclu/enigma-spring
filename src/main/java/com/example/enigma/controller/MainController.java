@@ -17,11 +17,8 @@ public class MainController {
 	@GetMapping("/index")
 	public String index(Model model) {
 		Rotor rotor1 = rotorService.findByRotorName("I");
-		rotor1.setTurnedRotorOrder(rotor1.getRotorOrder());
-		System.out.println(rotor1.getTurnedRotorOrder());
 		rotorService.turnRotor(rotor1);
-		System.out.println(rotor1.getTurnedRotorOrder());
-		model.addAttribute("rotor", rotor1.getTurnedRotorOrder());
+		model.addAttribute("rotor", rotor1.getRotorOrder());
 		return "index";
 	}
 }

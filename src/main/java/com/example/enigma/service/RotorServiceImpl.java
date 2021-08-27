@@ -41,10 +41,10 @@ public class RotorServiceImpl implements RotorService{
 	
 	@Override
 	public void turnRotor(Rotor rotor) {
-		String rotorOrder = rotor.getTurnedRotorOrder();
+		String rotorOrder = rotor.getRotorOrder();
 		StringBuilder stringBuilder = new StringBuilder(rotorOrder);
 		stringBuilder.append(rotorOrder.charAt(0));
 		stringBuilder.deleteCharAt(0);
-		rotor.setTurnedRotorOrder(stringBuilder.toString());
+		rotor.setRotorOrder(stringBuilder.toString());
 	}
 }
