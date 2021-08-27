@@ -9,4 +9,5 @@ public interface RotorService {
 	String getRotorOrder(Rotor rotor);
 	void save(Rotor rotor);
 	Boolean existsByRotorOrder(String rotorOrder);
+	void turnRotor(Rotor rotor);
 }

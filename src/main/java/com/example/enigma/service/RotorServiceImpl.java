@@ -38,4 +38,13 @@ public class RotorServiceImpl implements RotorService{
 	public Boolean existsByRotorOrder(String rotorOrder) {
 		return rotorRepository.existsByRotorOrder(rotorOrder);
 	}
+	
+	@Override
+	public void turnRotor(Rotor rotor) {
+		String rotorOrder = rotor.getTurnedRotorOrder();
+		StringBuilder stringBuilder = new StringBuilder(rotorOrder);
+		stringBuilder.append(rotorOrder.charAt(0));
+		stringBuilder.deleteCharAt(0);
+		rotor.setTurnedRotorOrder(stringBuilder.toString());
+	}
 }
